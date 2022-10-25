@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-C7L3CXQHSM"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-C7L3CXQHSM');
+  </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <title>MidPrice</title>
+  <!-- for styling -->
+  <style>
+    body {
+      background-color: #254b7f;
+      color: whitesmoke;
+    }
+    p {
+      text-align: center;vertical-align: middle;
+    }
+    span {
+      color: whitesmoke;
+      text-align: center;
+    }
+    div.w-33 {
+      width: 100%;
+    }
+    div.center {
+      text-align: center;
+    }
+    button {
+      background-color: #89b93e;
+      color: whitesmoke;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Title of your Converter -->
+  <h1 style="color: #89b93e; text-align: center;"></br>MIDPRICE</h1>
+  <!-- output field-->
+  <p style = "text-align: center;"> </br> <span id="Fecha"> </span> <p>
+  <h2 style = "text-align: center;"> </br> <span id="BCV"> </span> </h2>
+  <h2 style = "text-align: center;"> <span id="MD"> </span> </h2>
+  <h2 style = "text-align: center;"> </br> <span id="MP"> </span> </h2>
+  <!--Start the script-->
+  <script type="text/javascript">
+
+    // Main script
+      $.getJSON("https://s3.amazonaws.com/dolartoday/data.json", function (data) {
+        let bitRateUsd = JSON.stringify(data.USD.transferencia);
+        let bitRatebcv = JSON.stringify(data.USD.sicad2);
+        midprice = (bitRateUsd*0.5) + (bitRatebcv*0.5);
+        console.log(bitRateUsd);
+        console.log(bitRatebcv);
+        console.log(midprice);
+        document.getElementById("MP").innerHTML = "M.P.  = " + midprice.toFixed(2) + " Bs";
+        document.getElementById("MD").innerHTML = "M.D.   = " + bitRateUsd + " Bs";
+        document.getElementById("BCV").innerHTML = "B.C.V. = " + bitRatebcv + " Bs";
+        document.getElementById("Fecha").innerHTML = "La ultima consulta fue en " + JSON.stringify(data._timestamp.fecha);
+      });
+     //function that evaluates the weight and return result
+  </script>
+</body>
+
+</html>
