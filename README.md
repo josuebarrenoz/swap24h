@@ -1,2 +1,2 @@
-# swapping24
+# Swapping24
 A repository for swapping24
