@@ -9,8 +9,10 @@ body {
   background: linear-gradient(0deg, #89B93E 0%, #FFFFFF 33%, #254B7F 90%);
   color: whitesmoke;
   */
-  width: 99%;
-  height: 90%;
+  width: 98%;
+  margin: 0;
+  padding: 0;
+  height: 100%;
   align-items: center;
   justify-content: center;
   background-size: 300% 300%;
@@ -122,7 +124,8 @@ select.form-control {
 }
 
 div.w-6{
-  position: relative;
+  position: absolute;
+  top:25%;
   left:25%;
   width:50%;
   height: 550px;
@@ -152,7 +155,7 @@ p.w-5-title {
   padding-top: 5%;
   vertical-align: middle;
   text-align: center;
-  margin-top: 4rem;
+  margin-top: 0rem;
   font-weight: bold;
   font-size: x-large;
   color: whitesmoke;
@@ -199,7 +202,7 @@ div.btncontainer button {
   margin-top: 1em;
   padding: 0.5em 0.8em 0.5em 0.8em;
   border-style: none;
-  border-radius: 1000000px;
+  border-radius: 1rem;
   color: rgb(239, 239, 239);
   font-weight: bold;
   background-image: linear-gradient(45deg, rgba(137,185,62,0.8) 0%, rgba(37,75,127,0.8) 100%);
@@ -212,14 +215,18 @@ div.btncontainer button:hover {
 }
 
 header{
-  width:100%;
-  background-color: whitesmoke;
-  border-radius: 0.1rem;
+  width: 100%;
+  background-color: #282A35;
+  border-width: 2px;
+  border-color: #282A35;
+  border-style:solid;
+  padding: 10px;
 }
 
 img.logo{
-  width: 50px;
+  width: 100px;
   vertical-align: middle;
+  border-radius: 2rem;
 }
 
 span.header-title{
@@ -227,5 +234,5 @@ span.header-title{
   padding: 0 0 0 1rem;
   font-weight: bold;
   font-size: 1.5rem;
-  color:black;
+  color:whitesmoke;
 }
