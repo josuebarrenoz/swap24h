@@ -1,8 +1,7 @@
 <html lang=""es">
-
 <head>
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="index.css" /> 
+  <link rel="stylesheet" href="index.css" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <title>Calculadora</title>
     <!--Start the script-->
@@ -36,49 +35,48 @@
 </head>
 
 <body>
-  <!-- Title -->
-  <h1></br>Calculadora</h1>
-  <!-- input tag for enter the data -->
-  <!-- Calc function call -->
-  <div class="input-group">
-    <input id="numbers" type="number" required="" name="text" autocomplete="off" class="input" oninput="Calc(this.value)" onchange="Calc(this.value)">
-    <label class="user-label">Tengo: </label>
-  </div>
-  <p>
-    <!-- Token list -->
-    <select class="form-control" id="Tengo">
-      <option disabled value="" selected>Selecciona tu Divisa</option>
-      <option disabled value="">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspTradicional</option>
-      <option value="1">Transferencia en Bolivares (VES)</option>
-      <option value="2">Transferencia en Dolares (USD)</option>
-      <option value="3">Cash (USDc)</option>
-      <option disabled value="">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspCripto</option>
-      <option value="4">Tether (USDt)</option>
-    </select>
-  </p>
-  <p></br>Quiero:</p>
-  <p>
-    <!-- Token list -->
-    <select class="form-control" id="Quiero">
-      <option disabled value="" selected>Selecciona tu Divisa</option>
-      <option disabled value="">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspTradicional</option>
-      <option value="1">Transferencia en Bolivares (VES)</option>
-      <option value="2">Transferencia en Dolares (USD)</option>
-      <option value="3">Cash (USDc)</option>
-      <option disabled value="">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspCripto</option>
-      <option value="4">Tether (USDt)</option>
-    </select>
-  </p>
-  <!-- Buttons!!! -->
-  <div class="w-33">
-    <div class="center">
-      <p></br></p>
+
+  <div class="w-5">
+    <!-- Title -->
+    <p class="w-5-title">CALCULADORA</p>
+    <div class="datacontainer">
+      <div class="input-group">
+        <input id="numbers" type="number" required="" name="text" autocomplete="off" class="input" oninput="Calc(this.value)" onchange="Calc(this.value)">
+        <label class="user-label">Tengo: </label>
+      </div>
+      <div class="w-11">
+        <!-- Token list -->
+        <select class="form-control" id="Tengo">
+          <option disabled value="" selected>Selecciona tu Divisa</option>
+          <option disabled value="">Tradicional</option>
+          <option value="1">Transferencia en Bolivares (VES)</option>
+          <option value="2">Transferencia en Dolares (USD)</option>
+          <option value="3">Cash (USDc)</option>
+          <option disabled value="">Cripto</option>
+          <option value="4">Tether (USDt)</option>
+        </select>
+      </div>
+      <p class="quiero">Quiero:</p>
+      <div class="w-11">
+        <!-- Token list -->
+        <select class="form-control" id="Quiero">
+          <option disabled value="" selected>Selecciona tu Divisa</option>
+          <option disabled value="">Tradicional</option>
+          <option value="1">Transferencia en Bolivares (VES)</option>
+          <option value="2">Transferencia en Dolares (USD)</option>
+          <option value="3">Cash (USDc)</option>
+          <option disabled value="">Cripto</option>
+          <option value="4">Tether (USDt)</option>
+        </select>
+      </div>
+    </div>
+      <!-- Button!!! -->
+      <!-- Calc function call -->
+    <div class="btncontainer">
       <button onclick="Calc();">Resultado</button>
+      <!-- output field-->
+      <p class="includes"><span id="Resultado"> </span></p>
     </div>
   </div>
-  <!-- output field-->
-  <h2 style = "text-align: center;"> </br></br></br></br> <span id="Resultado"> </span> </h2>
-
 </body>
-
 </html>
