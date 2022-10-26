@@ -1,95 +1,12 @@
-<!DOCTYPE html>
-<html>
+<html lang=""es">
 
 <head>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-C7L3CXQHSM"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-
-    gtag('config', 'G-C7L3CXQHSM');
-  </script>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="index.css" /> 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-    crossorigin="anonymous"></script>
   <title>Calculadora</title>
-  <!-- for styling -->
-  <style>
-    body {
-      background-color: #254b7f;
-      color: whitesmoke;
-    }
-    p {
-      text-align: center;vertical-align: middle;
-    }
-    span {
-      color: whitesmoke;
-      text-align: center;
-    }
-    div.w-33 {
-      width: 100%;
-    }
-    div.center {
-      text-align: center;
-    }
-    button {
-      background-color: #89b93e;
-      color: whitesmoke;
-    }
-  </style>
-</head>
-
-<body>
-  <!-- Title of your Converter -->
-  <h1 style="color: #89b93e; text-align: center;"></br>Calculadora</h1>
-  <p></br></br>Tengo:</p>
-  <p>
-    <!-- Token list -->
-    <select class="form-control" id="Tengo">
-      <option disabled value="" selected>Selecciona tu Divisa</option>
-      <option disabled value="">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspTradicional</option>
-      <option value="1">Transferencia en Bolivares (VES)</option>
-      <option value="2">Transferencia en Dolares (USD)</option>
-      <option value="3">Cash (USDc)</option>
-      <option disabled value="">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspCripto</option>
-      <option value="4">Tether (USDt)</option>
-    </select>
-  </p>
-  <!-- input tag for enter the data -->
-  <!-- Calc function call -->
-  <p>
-    <input id="numbers" style= "text-align: center" type="number" placeholder="Cantidad" oninput="Calc(this.value)" onchange="Calc(this.value)" /> 
-  </p>
-  <p></br></br>Quiero:</p>
-  <p>
-    <!-- Token list -->
-    <select class="form-control" id="Quiero">
-      <option disabled value="" selected>Selecciona tu Divisa</option>
-      <option disabled value="">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspTradicional</option>
-      <option value="1">Transferencia en Bolivares (VES)</option>
-      <option value="2">Transferencia en Dolares (USD)</option>
-      <option value="3">Cash (USDc)</option>
-      <option disabled value="">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspCripto</option>
-      <option value="4">Tether (USDt)</option>
-    </select>
-  </p>
-  <!-- Buttons!!! -->
-  <div class="w-33">
-    <div class="center">
-      <p></br></p>
-      <button onclick="Calc();">Resultado</button>
-    </div>
-  </div>
-  <!-- output field-->
-  <h2 style = "text-align: center;"> </br></br></br></br> <span id="Resultado"> </span> </h2>
-  <!--Start the script-->
+    <!--Start the script-->
   <script type="text/javascript">
-
     // Main script
     function Calc() {
       $.getJSON("https://s3.amazonaws.com/dolartoday/data.json", function (data) {
@@ -114,9 +31,54 @@
           document.getElementById("Resultado").innerHTML = "Son " + montoc.toFixed(2) + " $";
         };
       });
-    } // End of run function
-     //function that evaluates the weight and return result
+    }
   </script>
+</head>
+
+<body>
+  <!-- Title -->
+  <h1></br>Calculadora</h1>
+  <!-- input tag for enter the data -->
+  <!-- Calc function call -->
+  <div class="input-group">
+    <input id="numbers" type="number" required="" name="text" autocomplete="off" class="input" oninput="Calc(this.value)" onchange="Calc(this.value)">
+    <label class="user-label">Tengo: </label>
+  </div>
+    <p></br></br></br>
+    <!-- Token list -->
+    <select class="form-control" id="Tengo">
+      <option disabled value="" selected>Selecciona tu Divisa</option>
+      <option disabled value="">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspTradicional</option>
+      <option value="1">Transferencia en Bolivares (VES)</option>
+      <option value="2">Transferencia en Dolares (USD)</option>
+      <option value="3">Cash (USDc)</option>
+      <option disabled value="">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspCripto</option>
+      <option value="4">Tether (USDt)</option>
+    </select>
+  </p>
+  <p></br>Quiero:</p>
+  <p>
+    <!-- Token list -->
+    <select class="form-control" id="Quiero">
+      <option disabled value="" selected>Selecciona tu Divisa</option>
+      <option disabled value="">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspTradicional</option>
+      <option value="1">Transferencia en Bolivares (VES)</option>
+      <option value="2">Transferencia en Dolares (USD)</option>
+      <option value="3">Cash (USDc)</option>
+      <option disabled value="">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspCripto</option>
+      <option value="4">Tether (USDt)</option>
+    </select>
+  </p>
+  <!-- Buttons!!! -->
+  <div class="w-33">
+    <div class="center">
+      <p></br></p>
+      <button onclick="Calc();">Resultado</button>
+    </div>
+  </div>
+  <!-- output field-->
+  <h2 style = "text-align: center;"> </br></br></br></br> <span id="Resultado"> </span> </h2>
+
 </body>
 
 </html>
