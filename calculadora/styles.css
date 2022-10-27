@@ -5,30 +5,16 @@
 }
 
 body {
-  /*
-  background: linear-gradient(0deg, #89B93E 0%, #FFFFFF 33%, #254B7F 90%);
-  color: whitesmoke;
-  */
-  position:absolute;
-  width:100%;
-  height:100%;
+  position:relative;
+  height:99vh;
+  width:auto;
   margin:0;
   padding:0;
-  margin-right:0;
-  /*
-  align-items: center;
-  justify-content: center;
-  */
   background-size: 500% 500%;
   background-image: linear-gradient(45deg,rgba(137,185,62,0.8) 0%, rgba(37,75,127,0.8)33%, rgba(37,75,127,0.8) 66%, rgba(137,185,62,0.8) 100%);  
   animation: AnimateBG 20s ease infinite;
 }
-/*
-h1 {
-  color: whitesmoke;
-  text-align: center;
-}
-*/
+
 p.quiero{
   height:0.5rem;
   position:relative;
@@ -39,24 +25,6 @@ p.quiero{
   font-weight: bold;
 }
 
-span.Resultado{
-  color: whitesmoke;
-  text-align: center;
-}
-/*
-div.w-33 {
-  width: 100%;
-}
-
-div.center {
-  text-align: center;
-}
-
-button {
-  background-color: #89b93e;
-  color: whitesmoke;
-}
-*/
 div.input-group {
   position: relative;
   width:100%;
@@ -128,8 +96,10 @@ select.form-control {
 }
 
 div.w-6{
-  position: relative;
-  top:2.5rem;
+  position:relative;
+  margin-bottom:3rem;
+  margin-left:2rem;
+  margin-top:4rem;
   height:30rem;
   left:25%;
   width:50%;
@@ -172,40 +142,29 @@ div.datacontainer {
   background-color: rgb(30,30,30);
   box-shadow: inset 0px 0px 2em rgba(0, 0, 0, 0.3);
 }
-/*
- p.price {
-  text-align: center;
-  color: rgb(180,180,180);
-  font-size: x-large;
-  font-weight: bold;
-  padding: 0.75em 0 0 0;
- }
 
- p.pricedescriptor {
-  text-align: center;
-  color: rgb(118, 118, 118);
-  font-size: medium;
-  padding: 0 0 1em 0;
- }
-*/
 p.includes {
-  padding-top: 0.2rem;
+  padding-left:0.2rem;
+  padding-right:0.2rem;
+  padding-top: 0.7rem;
+  padding-bottom: 0.7rem;
   text-align: center;
-  color: rgb(110, 110, 110);
-  margin-top: 0.6rem;
-  font-size: 1rem;
+  color: whitesmoke;
+  margin-top: 0.8rem;
+  font-size: 1.2rem;
   font-weight: bold;
+  text-shadow: 0.2rem 0.2rem 0.2rem black;
 }
 
 div.btncontainer {
   position:relative;
   text-align: center;
   padding-top: 0.1rem;
-  padding-bottom: 0.1rem;
+  padding-bottom: 1.5rem;
 }
 
 div.btncontainer button {
-  margin-top: 1rem;
+  margin-top: 0.5rem;
   padding: 1rem 1.8rem 1rem 1.8rem;
   border-style: none;
   border-radius: 1rem;
@@ -240,4 +199,14 @@ span.header-title{
   font-weight: bold;
   font-size: 1.5rem;
   color:whitesmoke;
+}
+footer{
+  position:sticky;
+  top:100vh;
+  width:100%;
+  margin-top:2rem;
+  border: solid;
+  border-radius:2rem;
+  border-color: #282A35;
+  text-align:center;
 }
