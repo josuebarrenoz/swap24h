@@ -188,9 +188,11 @@ header{
 }
 
 img.logo{
-  width: 5rem;
+  width: 10rem;
   vertical-align: middle;
-  border-radius: 1.5rem;
+  /*border-radius: 1.5rem;*/
+  /*object-view-box: inset(20% 20% 20% 20%);*/
+  object-fit: fill;
 }
 
 span.header-title{
