@@ -1,92 +1,68 @@
-<html lang=""es">
+<!doctype html>
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="styles.css" />
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <title>Calculadora</title>
-    <!--Start the script-->
-  <script type="text/javascript">
-    // Main script
-    function Calc() {
-      $.getJSON("https://s3.amazonaws.com/dolartoday/data.json", function (data) {
-        let bitRateUsd = JSON.stringify(data.USD.transferencia);
-        var value = document.getElementById("numbers").value;
-        var Tengo = document.querySelector("#Tengo").value;
-        var Quiero = document.querySelector("#Quiero").value;
-        montoa = value / bitRateUsd * 0.97;
-        montob = value * bitRateUsd * 0.97;
-        montoc = value * 0.97
-        console.log(bitRateUsd);
-        console.log(montoa);
-        console.log(montob);
-        console.log(montoc);
-        if (Tengo == Quiero) {
-          document.getElementById("Resultado").innerHTML = "Usa bien los desplegables para poder obtener un resultado sastifactorio";
-        } else if (Tengo == 1 && Quiero != 1){
-          document.getElementById("Resultado").innerHTML = "Son " + montoa.toFixed(2) + " $";
-        } else if (Tengo != 1 && Quiero == 1){
-          document.getElementById("Resultado").innerHTML = "Son " + montob.toFixed(2) + " Bs";
-        } else {
-          document.getElementById("Resultado").innerHTML = "Son " + montoc.toFixed(2) + " $";
-        };
-      });
-    }
-  </script>
+  <!-- Tu lógica ahora vive en app.js -->
+  <script src="app.js" defer></script>
 </head>
 
 <body>
   <header>
-    <a href="https://swapping24.com">
-      <img class="logo" src="https://swapping24.com/calculadora/Imagenes/2022-10-26_17-49.png"/>
+    <a href="https://josuebarrenoz.github.io/swap24h/no_existe" class="logo-container">
+      <img class="logo" src="https://i.ibb.co/Rp6TT3qM/eaae3795-d414-47c5-b12e-d534d9ba6fc0.jpg" alt="Swapping24" border="0">
     </a>
     <span class="header-title">SWAPPING24</span>
   </header>
+
   <div class="w-6">
     <div class="w-5">
-    <!-- Title -->
-    <p class="w-5-title">CALCULADORA</p>
-    <div class="datacontainer">
-      <div class="input-group">
-        <input id="numbers" type="number" required="" name="text" autocomplete="off" class="input" oninput="Calc(this.value)" onchange="Calc(this.value)">
-        <label class="user-label">Tengo: </label>
+      <p class="w-5-title">CALCULADORA</p>
+
+      <div class="datacontainer">
+        <div class="input-group">
+          <input id="numbers" type="number" name="text" autocomplete="off" class="input" required placeholder="0.00" min="0" step="any">
+          <label class="user-label">Tengo:</label>
+        </div>
+
+        <div class="w-11">
+          <select class="form-control" id="Tengo" required>
+            <option disabled value="" selected>Selecciona tu Divisa</option>
+            <option disabled value="">Tradicional</option>
+            <option value="1">Transferencia en Bolívares (VES)</option>
+            <option value="2">Transferencia en Dólares (USD)</option>
+            <option value="3">Cash</option>
+            <option disabled value="">Cripto</option>
+            <option value="4">Tether (USDt)</option>
+          </select>
+        </div>
+
+        <p class="quiero">Quiero:</p>
+
+        <div class="w-11">
+          <select class="form-control" id="Quiero" required>
+            <option disabled value="" selected>Selecciona tu Divisa</option>
+            <option disabled value="">Tradicional</option>
+            <option value="1">Transferencia en Bolívares (VES)</option>
+            <option value="2">Transferencia en Dólares (USD)</option>
+            <option value="3">Cash</option>
+            <option disabled value="">Cripto</option>
+            <option value="4">Tether (USDt)</option>
+          </select>
+        </div>
       </div>
-      <div class="w-11">
-        <!-- Token list -->
-        <select class="form-control" id="Tengo">
-          <option disabled value="" selected>Selecciona tu Divisa</option>
-          <option disabled value="">Tradicional</option>
-          <option value="1">Transferencia en Bolivares (VES)</option>
-          <option value="2">Transferencia en Dolares (USD)</option>
-          <option value="3">Cash (USDc)</option>
-          <option disabled value="">Cripto</option>
-          <option value="4">Tether (USDt)</option>
-        </select>
+
+      <div class="btncontainer">
+        <button id="btnCalcular" type="button">Resultado</button>
+        <p class="includes"><span id="Resultado"></span></p>
       </div>
-      <p class="quiero">Quiero:</p>
-      <div class="w-11">
-        <!-- Token list -->
-        <select class="form-control" id="Quiero">
-          <option disabled value="" selected>Selecciona tu Divisa</option>
-          <option disabled value="">Tradicional</option>
-          <option value="1">Transferencia en Bolivares (VES)</option>
-          <option value="2">Transferencia en Dolares (USD)</option>
-          <option value="3">Cash (USDc)</option>
-          <option disabled value="">Cripto</option>
-          <option value="4">Tether (USDt)</option>
-        </select>
-      </div>
-    </div>
-      <!-- Button!!! -->
-      <!-- Calc function call -->
-    <div class="btncontainer">
-      <button onclick="Calc();">Resultado</button>
-      <!-- output field-->
-      <p class="includes"><span id="Resultado"> </span></p>
-    </div>
     </div>
   </div>
+
   <footer class="footer">
-  <p>En proceso...</p>
+    <p>En proceso...</p>
   </footer>
 </body>
 </html>

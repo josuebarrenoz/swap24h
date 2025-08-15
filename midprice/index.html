@@ -6,7 +6,6 @@
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
-
     gtag('config', 'G-C7L3CXQHSM');
   </script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -22,6 +21,7 @@
     body {
       background-color: #254b7f;
       color: whitesmoke;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     }
     p {
       text-align: center;vertical-align: middle;
@@ -41,34 +41,16 @@
       color: whitesmoke;
     }
   </style>
+  <script src="app.js" defer></script>
 </head>
 
 <body>
   <!-- Title of your Converter -->
-  <h1 style="color: #89b93e; text-align: center;"></br>MIDPRICE</h1>
+  <h1 style="color: #89b93e; text-align: center;"><br>MIDPRICE</h1>
   <!-- output field-->
-  <p style = "text-align: center;"> </br> <span id="Fecha"> </span> <p>
-  <h2 style = "text-align: center;"> </br> <span id="BCV"> </span> </h2>
-  <h2 style = "text-align: center;"> <span id="MD"> </span> </h2>
-  <h2 style = "text-align: center;"> </br> <span id="MP"> </span> </h2>
-  <!--Start the script-->
-  <script type="text/javascript">
-
-    // Main script
-      $.getJSON("https://s3.amazonaws.com/dolartoday/data.json", function (data) {
-        let bitRateUsd = JSON.stringify(data.USD.transferencia);
-        let bitRatebcv = JSON.stringify(data.USD.sicad2);
-        midprice = (bitRateUsd*0.5) + (bitRatebcv*0.5);
-        console.log(bitRateUsd);
-        console.log(bitRatebcv);
-        console.log(midprice);
-        document.getElementById("MP").innerHTML = "M.P.  = " + midprice.toFixed(2) + " Bs";
-        document.getElementById("MD").innerHTML = "M.D.   = " + bitRateUsd + " Bs";
-        document.getElementById("BCV").innerHTML = "B.C.V. = " + bitRatebcv + " Bs";
-        document.getElementById("Fecha").innerHTML = "La ultima consulta fue en " + JSON.stringify(data._timestamp.fecha);
-      });
-     //function that evaluates the weight and return result
-  </script>
+  <p style="text-align: center;"><br><span id="Fecha"></span></p>
+  <h2 style="text-align: center;"><br><span id="BCV"></span></h2>
+  <h2 style="text-align: center;"><span id="MD"></span></h2>
+  <h2 style="text-align: center;"><br><span id="MP"></span></h2>
 </body>
-
 </html>

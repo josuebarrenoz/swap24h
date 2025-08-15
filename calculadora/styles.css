@@ -4,6 +4,15 @@
   100%{background-position:0% 90%}
 }
 
+@media (max-width: 480px){
+  div.w-6 { margin: 2rem auto; width: 94vw; min-height: 26rem; }
+  p.w-5-title { font-size: 1.25rem; }
+  p.includes { font-size: 1rem; }
+}
+
+* { box-sizing: border-box; }
+html, body { max-width: 100%; overflow-x: hidden} /* evita desbordes horizontales */
+
 body {
   position:relative;
   height:99vh;
@@ -96,12 +105,13 @@ select.form-control {
 }
 
 div.w-6{
-  position:relative;
-  margin-bottom:3rem;
-  margin-top:4rem;
-  height:30rem;
-  left:25%;
-  width:50%;
+  position: relative;
+  /* antes: left:25%; width:50%; height:30rem; */
+  margin: 4rem auto 3rem;          /* centra sin usar left */
+  width: min(92vw, 560px);         /* ancho fluido con tope */
+  max-width: 100%;
+  min-height: 28rem;               /* da aire, pero permite crecer */
+  height: auto;                    /* deja que el contenido defina la altura */
   border-radius: 1rem;
   background-image: linear-gradient(163deg, #00ff75 0%, #3700ff 100%);
   transition: all .3s;
@@ -109,11 +119,14 @@ div.w-6{
 
 div.w-5 {
   position: relative;
-  height:100%;
+  /* antes: height:100%; */
+  height: auto;
   border-radius: 1rem;
   background-color: rgb(45, 45, 45);
   transition: all .2s;
+  padding-bottom: 0.75rem; /* pequeño colchón para el botón y resultado */
 }
+
 
 div.w-5:hover {
   transform: scale(0.98);
@@ -211,4 +224,11 @@ footer{
   border-color: #282A35;
   text-align:center;
   color: whitesmoke;
+}
+
+.btncontainer{
+  position: sticky;
+  bottom: 0;
+  padding-top: 0.5rem;
+  background: rgb(45,45,45); /* mismo fondo que la tarjeta interna */
 }

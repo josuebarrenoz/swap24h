@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Página no encontrada</title>
+  <style>
+    :root {
+      --bg: #f7fafc;
+      --fg: #0f172a;
+      --muted: #64748b;
+      --btn-bg: #ffffff;
+      --btn-bd: #e2e8f0;
+      --btn-hv: #f1f5f9;
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; margin: 0; }
+    body {
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", sans-serif;
+      background: var(--bg);
+      color: var(--fg);
+    }
+    .back {
+      position: fixed;
+      top: 16px;
+      right: 16px;
+      padding: 10px 14px;
+      background: var(--btn-bg);
+      border: 1px solid var(--btn-bd);
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background .15s ease, transform .05s ease;
+    }
+    .back:hover { background: var(--btn-hv); }
+    .back:active { transform: translateY(1px); }
+    .wrap {
+      min-height: 100%;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+      text-align: center;
+    }
+    .card {
+      max-width: 560px;
+      width: 100%;
+      padding: 32px 24px;
+    }
+    .art {
+      display: block;
+      margin: 0 auto 16px;
+      width: 220px;
+      max-width: 60vw;
+      height: auto;
+    }
+    h1 {
+      margin: 0 0 8px;
+      font-size: clamp(20px, 3.8vw, 32px);
+      line-height: 1.2;
+    }
+    p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+    .code { letter-spacing: .04em; }
+  </style>
+</head>
+<body>
+  <button class="back" type="button" onclick="history.back()">← Volver</button>
+
+  <div class="wrap">
+    <main class="card" role="main" aria-labelledby="title">
+      <!-- Ilustración simple (SVG inline) de “página perdida” -->
+      <svg class="art" viewBox="0 0 240 200" role="img" aria-labelledby="imgTitle imgDesc">
+        <title id="imgTitle">Página no encontrada</title>
+        <desc id="imgDesc">Ilustración de una hoja con una lupa, simbolizando búsqueda.</desc>
+        <defs>
+          <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+            <stop offset="0" stop-color="#e2e8f0"/>
+            <stop offset="1" stop-color="#cbd5e1"/>
+          </linearGradient>
+        </defs>
+        <!-- nube -->
+        <ellipse cx="120" cy="150" rx="80" ry="18" fill="#e5e7eb"/>
+        <!-- hoja -->
+        <path d="M60 30 h90 l20 20 v85 a10 10 0 0 1 -10 10 H70 a10 10 0 0 1 -10 -10 Z" fill="url(#g)" stroke="#94a3b8" stroke-width="2"/>
+        <!-- doblez -->
+        <path d="M150 30 v20 h20" fill="#cbd5e1"/>
+        <!-- líneas de texto -->
+        <rect x="78" y="60" width="84" height="6" rx="3" fill="#94a3b8"/>
+        <rect x="78" y="76" width="64" height="6" rx="3" fill="#a1a9b8"/>
+        <rect x="78" y="92" width="72" height="6" rx="3" fill="#a1a9b8"/>
+        <!-- lupa -->
+        <circle cx="165" cy="128" r="20" fill="#ffffff" stroke="#64748b" stroke-width="3"/>
+        <line x1="179" y1="142" x2="194" y2="157" stroke="#64748b" stroke-width="6" stroke-linecap="round"/>
+        <!-- signo de pregunta dentro de la lupa -->
+        <path d="M165 118c0-5 4-9 9-9s9 4 9 9c0 7-8 7-8 13" fill="none" stroke="#64748b" stroke-width="3" stroke-linecap="round"/>
+        <circle cx="174" cy="142" r="2.2" fill="#64748b"/>
+      </svg>
+
+      <h1 id="title">Esta página (https://swapping24.com) ya no existe</h1>
+      <p class="code">Error <strong>404</strong></p>
+
+      <noscript>
+        <p style="margin-top:12px">
+          <a href="/" style="text-decoration:none;border-bottom:1px solid #cbd5e1;color:#0f172a;">Regresar al inicio</a>
+        </p>
+      </noscript>
+    </main>
+  </div>
+</body>
+</html>
