@@ -49,7 +49,7 @@ async function cargarTasa() {
     const s = Number(data?.binance?.simple_avg);
     const f = Number(data?.binance?.first_price);
 
-    const valor = [w, s, f].find((n) => Number.isFinite(n));
+    const valor = [w, s, f].find((n) => Number.isFinite(n)); 
     if (!Number.isFinite(valor)) throw new Error('Tasa inválida en /summary');
 
     tasaVESporUSD = valor; // VES por USD
